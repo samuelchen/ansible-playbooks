@@ -1,0 +1,13 @@
+---
+# This playbook deploys python 3 
+
+- hosts: appserver
+  remote_user: root
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: install python 3
+      package: 
+        name: python34
+        state: latest
